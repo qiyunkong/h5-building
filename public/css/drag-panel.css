@@ -1,0 +1,25 @@
+.Yun-row .Yun-col:nth-child(2){
+  background-color: #fff;
+  overflow: hidden;
+}
+.Yun-row .Yun-col:nth-child(2) .panel{
+  border-radius: 0;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  /* border: none; */
+}
+.panel-default>.panel-heading{
+  margin-top: -1px;
+  margin-bottom: -1px;
+  background-color: #fff;
+}
+.Yun-row .Yun-col:nth-child(2) .panel-body{
+  padding:0 ;
+  margin-right:-1px;
+}
+.Yun-row .Yun-col:nth-child(2) .Yun-table{
+  width: 100%;
+} 
+.Yun-row .Yun-col:nth-child(2) .Yun-table tbody{
+  width: 100%;
+}

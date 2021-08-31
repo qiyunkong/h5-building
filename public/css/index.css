@@ -1,0 +1,242 @@
+/* 
+  css start 
+    v1.0.0
+*/
+
+@import url('../../static/font/bootstrap-icons.css');
+@import url('../../static/bootstrap/css/bootstrap.min.css');
+@import url('../../static/devices/css/devices.min.css');
+
+/* 
+  css components  start 
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.app{
+  display: flex;
+  flex-direction: column; 
+  height: 100vh;
+  /* overflow: hidden; */
+}
+/* hander 导航 */
+.hander .navbar{
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: rgb(63,72,204);
+  box-shadow: 0px 13px 35px -12px rgb(0 0 0 / 15%);
+}
+/* main 主体部分 */
+.main{
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-content: initial;
+  background-color: #fff;
+}
+/* 侧边栏 */
+.main aside{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 16px 5px #d9d9d9;
+  z-index: 1; /* 弹性盒子会导致层次不一样*/
+}
+.main aside header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+}
+.main aside main{
+  display: flex;
+  flex: 1;
+}
+.aside-content{
+  box-shadow: 0px -1px 1px #d9d9d9;
+}
+.aside-content .btn-group-vertical .btn {
+  color: rgb(109,109,109);
+  padding: 5px 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.aside-content .btn.focus,
+.aside-content .btn:focus{
+  border-radius: 0;
+  /* box-shadow: 0 0 0.2rem rgb(0 123 255 / 25%); */
+  box-shadow: 1px 0px 0px rgb(63 72 204);
+  color:rgb(63 72 204) ;
+}
+.aside-content .panel-body .component-list{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 265px;
+}
+.aside-content .card-body{
+  background-color: rgb(245,245,245);
+}
+.aside-content .panel-body .component-list li{
+  width: 130px;
+  padding: 6px;
+}
+.aside-content .panel .h3, 
+.aside-content .panel  h3 {
+  font-size: 1.3rem;
+}
+.main aside main .navtab{
+  box-shadow: 1px 0px 1px #d9d9d9;
+}
+/* 设计器*/
+.main .build-mobile{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(245,245,245);
+}
+
+
+.mobile{
+  transform: scale(0.9)
+}
+
+.main .Yun-col:nth-child(4){
+  background-color: #fff;
+}
+
+
+
+
+.element-set{
+  padding:0 10px;
+}
+.element-set .set-list{
+  list-style: none;
+  padding: 0;
+}
+.element-set .set-list .item{
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.element-set .set-list .item .set-name{
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(177,177,177);
+  padding-right: 20px;
+}
+
+
+.btn-group-vertical .btn{
+  background-color: rgba(0,0,0,0);
+  color: rgb(191,203,217);
+  padding: 10px 20px;
+}
+
+.marvel-device .screen{
+  overflow-y: auto;
+}
+.marvel-device .screen::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width : 5px;  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+  /* display: none; */
+}
+.marvel-device .screen::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius   : 10px;
+  background-color: skyblue;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+.marvel-device .screen::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background   : #ededed;
+  border-radius: 10px;
+}
+
+
+/***https://www.jianshu.com/p/c2addb233acd**/
+
+.Yun-table{
+  width: 100%;
+} 
+.Yun-table tbody{
+  width: 100%;
+}
+
+.Yun-table td{
+  /* text-align: center; */
+  border: 1px solid #ccc;
+  color:rgb(114,152,221);
+  padding:10px 20px;
+}
+
+/* H5设计器 样式*/
+.mobile-design{
+  min-height: 250px;
+  /* padding: 10px 0; */
+}
+/* 设计器有东西 */
+.on{
+  border: 2px dashed #ccc;
+}
+.on::before {
+  display: block;
+  content: "组件拖放到此区域即可";
+  text-align: center;
+  line-height: 250px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 1vw;
+  color: hsl(0, 0%, 30%);
+}
+.glyphicon{
+  margin-right: 5px;
+}
+
+.droppable{
+  position: relative;
+}
+
+
+.droppable img {
+  height: 80%;
+  object-fit: contain;
+}
+
+.dragover {
+  border: 2px dashed rgb(114,152,221);
+}
+
+.dropped {
+  border: 2px dashed rgb(114,152,221);
+  background-color:rgba(114,152,221,0.52); 
+}
+.dropped::before {
+  z-index: -1;
+  display: none;
+}

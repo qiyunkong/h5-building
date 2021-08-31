@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul{
+      transition: 0.5s;
+      width: 252px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    ul li{
+      list-style: none;
+      height: 52px;
+      width: 250px;
+      border: 1px solid #ccc;
+      margin-bottom:-1px;
+      transition: 0.5s;
+    }
+
+
+    .off {
+      border: 8px dashed #ffae00;
+    }
+
+    .on {
+      border: 1px dashed #007bff;
+      background-color: rgba(0, 123, 255, 0.52);
+    }
+
+
+  </style>
+</head>
+<body>
+  <ul ondrop="drop_handler(event);" ondragover="debounce(dragover_handler(event),100);" ondragleave="handleDragLeave(event)">
+    <li draggable="true" ondragstart="dragstart_handler(event);">1</li>
+    <li draggable="true" ondragstart="dragstart_handler(event);">2</li>
+    <li draggable="true" ondragstart="dragstart_handler(event);">3</li>
+    <li draggable="true" ondragstart="dragstart_handler(event);">4</li>
+    <li style="height: 80px;" draggable="true" ondragstart="dragstart_handler(event);">5</li>
+  </ul>
+  <script>
+    // 获取ul
+    var uls = document.querySelector('ul');
+    //上个元素目标
+    var _target; 
+
+    // 拖拽元素开始函数
+    function dragstart_handler(ev) {
+      ev.target.classList.add("on")
+      _target = ev.target;
+    }
+
+    // 拖拽元素过程中监听
+    function dragover_handler(ev) {
+      ev.preventDefault();  
+      if(_target != ev.target){
+       uls.insertBefore(_target,ev.target);
+       console.log(ev.target.offsetTop,ev.clientY)
+       console.log(this)
+      }
+    }
+
+    function handleDragLeave(ev) {
+
+    }
+
+    // 放置拖拽元素监听
+    function drop_handler(ev) {
+      ev.preventDefault();
+      console.log("放置拖拽元素监听目标",ev)
+      _target.classList.remove('on')
+      // 清除data
+      ev.dataTransfer.clearData();
+    }
+
+    // 封装防抖函数
+    function debounce (fn,delay){
+      let time;
+      let debounced = function(){
+        let That = this
+        clearTimeout(time)
+        time = setTimeout(function (){
+          fn.call(That);
+        },delay)
+      }
+      return debounced
+    }
+  </script>
+</body>
+</html>
+
+<!-- 
+  案例:
+  https://www.cnblogs.com/guojikun/p/9712507.html
+
+ -->
